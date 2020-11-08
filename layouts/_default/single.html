@@ -5,7 +5,11 @@
   {{ if (eq .Type "search") }}
     <!-- TODO: search https://gohugo.io/tools/search/ -->
   {{ else }}
+    <h5 id="wordcount"> {{ .WordCount }} Words </h5>
     {{ .Content }}
+    <div class="blog-post-comments">
+        {{ template "_internal/disqus.html" . }}
+    </div>
   {{ end }}
   </div>
 </article>
